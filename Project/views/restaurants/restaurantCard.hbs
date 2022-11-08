@@ -1,26 +1,27 @@
 
-    <h1>{{name}}</h1>
+    <h1>{{restaurant.name}}</h1>
     <img src="{{picture}}" />
-    
-    <p>{{style}}</p>
-    <p>{{address}}</p> 
-    <p>{{phonenumber}}</p>
-    <p>{{price}}</p>
-    <p>{{wifi}}</p>
-    <p>{{coworking}}</p>
-    <p>{{delivery}}</p>
-    <p>{{petFriendly}}</p>
 
-        {{#if petFriendly}}
-        {{/if}}
+    <p>{{likes}}</p>
+    
+    <p>{{restaurant.style}}</p>
+    <p>{{restaurant.address}}</p> 
+    <p>{{restaurant.phonenumber}}</p>
+    <p>{{restaurant.price}}</p>
+    <p>{{restaurant.wifi}}</p>
+    <p>{{restaurant.coworking}}</p>
+    <p>{{restaurant.petfriendly}}</p>
+    <p>{{restaurant.delivery}}</p>
 
 
 
     <form action="/restaurants/{{ this.id }}" method="POST">
-        <button type="submit" name="rate" value="like">like</button>
-        <button type="submit" name="rate" value="dislike">dislike</button>
-        <label> Review
+    <label> Review
             <input type="text" name="review" placeholder="Your review" />
-        </label>
+        <button type="submit" name="rate" value="like">like</button>
+    </form>
+
+    <form action="/restaurants/{{ this.id }}" method="POST"></form>
+        <button type="submit" name="rate" value="dislike">dislike</button>
     </form>
 
