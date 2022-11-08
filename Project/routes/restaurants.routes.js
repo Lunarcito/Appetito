@@ -55,21 +55,37 @@ router.get("/restaurants/:restaurantId", async (req, res) => {
     try {
       const restaurant = await Restaurant.findById(restaurantId)
       
-      res.render("restaurants/restaurantCard", restaurant)
+      const counting = await Rate.find({restaurantId})
+        let likes = 0
+        let dislikes =0
+
+    counting.forEach(ele=>{
+        if(ele.rate === 1){
+            likes++
+        } else if (ele.rate ===-1){
+            dislikes++
+        }
+    }
+    )
+console.log (likes)
+
+      res.render("restaurants/restaurantCard", {restaurant, likes, dislikes} )
     } catch (err) {
       console.log(err)
     }
   })
 
 
-  router.post('/restaurants/:restaurantId', async (req, res) => {
-    const rate = req.body
+  router.post('/restaurants/:restaurantId', isLoggedIn, async (req, res) => {
     try {
-        console.log(req.body)
         const user = req.session.currentUser
+        console.log("This is the user", user)
         const userId = user._id
+        console.log("This is the userId", userId)
         const restaurantId = req.params.restaurantId
+        
         const restaurant = await Restaurant.findById(restaurantId)
+        console.log("This is the restaurantId", restaurant)
         let rate = 0
         const review = req.body.review
         if (req.body.rate === "like") {
@@ -77,6 +93,15 @@ router.get("/restaurants/:restaurantId", async (req, res) => {
         } else if (req.body.rate === "dislike") {
             rate = -1
         }
+        
+   
+
+        let newRate = await Rate.create({rate, review, userId, restaurantId})
+        await User.findByIdAndUpdate(userId,{ $push: { rateIds: userId } })
+        
+        await Restaurant.findByIdAndUpdate(restaurantId,{ $push: { rateIds: restaurantId } })
+        
+        res.redirect('/restaurants') 
 
     } catch (error) {
         console.log(error)
