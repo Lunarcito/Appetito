@@ -149,15 +149,15 @@ router.post('/restaurants/:restaurantId/like', async (req, res) => {
 
 router.post('/restaurants/:restaurantId/dislike', async (req, res) => {
     try {
-      
-
         const user = req.session.currentUser
         const userId = user._id
         const restaurantId = req.params.restaurantId
         const rate = -1
 
         let rateDB = await Rate.find({restaurant: restaurantId, user: userId})
-        if (rateDB)  {
+        console.log('this is the found dbb',rateDB)
+        if (rateDB) {
+            console.log('hola')
             await Rate.findOneAndDelete({restaurant: restaurantId, user: userId})
         }
 
