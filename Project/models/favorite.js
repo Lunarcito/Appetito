@@ -4,12 +4,12 @@ const { Schema, model } = require("mongoose");
 const favoriteSchema = new Schema(
   {
     user: {
-        type: {type: Schema.Types.ObjectId, ref:"User"},
+        type: Schema.Types.ObjectId, ref:"User",
 
       },
 
     restaurant: {
-        type: [{type: Schema.Types.ObjectId, ref:"Restaurant"}]
+        type: Schema.Types.ObjectId, ref:"Restaurant"
       },
     
   },

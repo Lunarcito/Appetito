@@ -5,7 +5,7 @@ const router = express.Router();
 const User = require("../models/User.model");
 const Restaurant = require("../models/restaurant");
 const Rate = require("../models/rate");
-
+const Favorite = require("../models/favorite");
 
 
 router.get('/restaurants' , async (req, res) => {
@@ -36,6 +36,7 @@ router.get('/create-restaurant', (req, res) => {
 
 router.post('/create-restaurant', async (req, res) => {
     const {name, style, address, price, phonenumber, picture, instagram, wifi, coworking, delivery } = req.body
+    console.log("Hello Cualquier cosa")
     try {
         const wifiT = Boolean(wifi)
         const cowork = Boolean(coworking)
@@ -65,10 +66,11 @@ router.get("/restaurants/:restaurantId", async (req, res) => {
         } else if (ele.rate ===-1){
             dislikes++
         }
-        console.log("number of dislikes", dislikes)
-    }
-    )
-console.log (likes)
+       
+    },
+    
+    ),
+
 
       res.render("restaurants/restaurantCard", {restaurant, likes, dislikes} )
     } catch (err) {
@@ -77,16 +79,20 @@ console.log (likes)
   })
 
 
+
+
+
   router.post('/restaurants/:restaurantId', isLoggedIn, async (req, res) => {
     try {
         const user = req.session.currentUser
-        console.log("This is the user", user)
+       
         const userId = user._id
-        console.log("This is the userId", userId)
+        
         const restaurantId = req.params.restaurantId
         
         const restaurant = await Restaurant.findById(restaurantId)
-        console.log("This is the restaurantId", restaurant)
+        console.log ("ooooooooo")
+       
         let rate = 0
         const review = req.body.review
         if (req.body.rate === "like") {
@@ -107,7 +113,9 @@ console.log (likes)
     } catch (error) {
         console.log(error)
     }
-})
+}),
 
 
 module.exports = router
+
+

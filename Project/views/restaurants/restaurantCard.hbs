@@ -6,6 +6,7 @@
     <p>{{dislikes}}</p>
     
     <p>{{restaurant.style}}</p>
+    <p>{{restaurant.favorite}}</p>
     <p>{{restaurant.address}}</p> 
     {{#if restaurant.phonenumber}}
     <p>{{restaurant.phonenumber}}</p>
@@ -25,7 +26,11 @@
         <button type="submit" name="rate" value="like">like</button>
     </form>
 
-    <form action="/restaurants/{{ restaurant.id }}" method="POST"></form>
+    <form action="/restaurants/{{ restaurant.id }}" method="POST"> 
         <button type="submit" name="rate" value="dislike">dislike</button>
+   </form>
+
+    <form action="/favorite/{{ restaurant._id }}" method="POST">
+        <button type="submit" name="favorite" value="favorite">Favorite</button>
     </form>
 
