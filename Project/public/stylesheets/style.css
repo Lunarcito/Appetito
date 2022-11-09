@@ -10,3 +10,16 @@ a {
 h1 {
   color: 15px;
 }
+
+.rest-names {
+  position: relative;
+  top: 140%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  color: red
+}
+
+.rest-list img {
+  width: 75vw;
+  opacity: 50%;
+}
