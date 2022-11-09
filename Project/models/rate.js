@@ -5,22 +5,13 @@ const rateSchema = new Schema(
   {
     user: {
          type: Schema.Types.ObjectId, ref:"User",
-
       },
     restaurant: {
-
         type: Schema.Types.ObjectId, ref:"Restaurant",
-
       },
-   
     rate: {
       type: Number
-    },
-
-    review: {
-        type: String,
-      },
-  
+    }
   },
 
   {

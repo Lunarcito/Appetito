@@ -19,13 +19,11 @@
 
 
 
-    <form action="/restaurants/{{ restaurant.id }}" method="POST">
-    <label> Review
-            <input type="text" name="review" placeholder="Your review" />
+    <form action="/restaurants/{{ restaurant._id }}/like" method="POST">
         <button type="submit" name="rate" value="like">like</button>
     </form>
 
-    <form action="/restaurants/{{ restaurant.id }}" method="POST"></form>
-        <button type="submit" name="rate" value="dislike">dislike</button>
+    <form action="/restaurants/{{ restaurant._id }}/dislike" method="POST">
+        <button type="submit" name="rate" value="like">dislike</button>
     </form>
 
