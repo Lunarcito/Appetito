@@ -35,7 +35,9 @@ const Restaurants = [
     wifi: true,
     coworking: false,
     delivery: false,
-    petFriendly: true 
+    petFriendly: true,
+    favorite: true 
+
   },
 
   {
@@ -49,8 +51,8 @@ const Restaurants = [
     wifi: true,
     coworking: false,
     delivery: false,
-    petFriendly: true 
-
+    petFriendly: true, 
+    favorite: true 
   },
 
   {
@@ -64,8 +66,8 @@ const Restaurants = [
     wifi: true,
     coworking: false,
     delivery: false,
-    petFriendly: true 
-
+    petFriendly: true, 
+    favorite: false
   },
 
   {
@@ -79,7 +81,8 @@ const Restaurants = [
     wifi: true,
     coworking: false,
     delivery: true,
-    petFriendly: false 
+    petFriendly: false,
+    favorite: true 
 
   },
 
@@ -94,8 +97,8 @@ const Restaurants = [
     wifi: true,
     coworking: false,
     delivery: false,
-    petFriendly: false 
-
+    petFriendly: false, 
+    favorite: true
   },
 
   {
@@ -103,13 +106,14 @@ const Restaurants = [
     style: "Brunch", 
     address: "Carrer de Bailèn, 115, 08009 Barcelona ", 
     price: "€€",
-    phonenumber: 000000,
+    phonenumber: null,
     picture: "https://www.metropoliabierta.com/uploads/s1/19/19/48/6/aperturabilly.jpeg", 
     instagram: "https://www.instagram.com/billybrunch/?hl=es", 
     wifi: true,
     coworking: false,
     delivery: false, 
     petFriendly: true,
+    favorite: true
   },
 ]
 

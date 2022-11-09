@@ -5,6 +5,8 @@ const router = express.Router();
 const User = require("../models/User.model");
 const Restaurant = require("../models/restaurant");
 const Rate = require("../models/rate");
+
+const Favorite = require("../models/favorite");
 const isLoggedOut = require('../middleware/isLoggedOut');
 
 
@@ -27,6 +29,7 @@ router.get('/create-restaurant' , isLoggedIn, isAdmin, (req, res) => {
 
 router.post('/create-restaurant', async (req, res) => {
     const {name, style, address, price, phonenumber, picture, instagram, wifi, coworking, delivery } = req.body
+    console.log("Hello Cualquier cosa")
     try {
         const wifiT = Boolean(wifi)
         const cowork = Boolean(coworking)
@@ -61,6 +64,22 @@ router.get("/restaurants/:restaurantId", isLoggedIn, async (req, res) => {
         const ratesDB = await Rate.find({restaurant: restaurantId})
         let likes = 0
         let dislikes = 0
+
+
+    counting.forEach(ele=>{
+        if(ele.rate === 1){
+            likes++
+        } else if (ele.rate ===-1){
+            dislikes++
+        }
+       
+    },
+    
+    ),
+
+
+      res.render("restaurants/restaurantCard", {restaurant, likes, dislikes} )
+      
         ratesDB.forEach((rateDB) => {
             if (rateDB.rate < 0) {
                 dislikes++
@@ -71,12 +90,34 @@ router.get("/restaurants/:restaurantId", isLoggedIn, async (req, res) => {
 
     
         res.render("restaurants/restaurantCard", {restaurant, likes, dislikes} )
+
     } catch (err) {
         console.log(err)
     }
   })
 
 
+
+
+
+
+  router.post('/restaurants/:restaurantId', isLoggedIn, async (req, res) => {
+    try {
+        const user = req.session.currentUser
+       
+        const userId = user._id
+        
+        const restaurantId = req.params.restaurantId
+        
+        const restaurant = await Restaurant.findById(restaurantId)
+        console.log ("ooooooooo")
+       
+        let rate = 0
+        const review = req.body.review
+        if (req.body.rate === "like") {
+            rate = 1
+        } else if (req.body.rate === "dislike") {
+            rate = -1
 
 router.post('/restaurants/:restaurantId/like', async (req, res) => {
     try {
@@ -87,6 +128,7 @@ router.post('/restaurants/:restaurantId/like', async (req, res) => {
 
         let rateDB = await Rate.find({restaurant: restaurantId, user: userId})
         if (rateDB) {
+
         }
 
         let newRate = await Rate.create({rate, restaurant: restaurantId, user: userId})
@@ -123,8 +165,8 @@ router.post('/restaurants/:restaurantId/dislike', async (req, res) => {
     } catch (error) {
         console.log(error)
     }
-})
-
+}),
 
 
 module.exports = router
+

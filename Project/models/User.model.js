@@ -25,8 +25,13 @@ const userSchema = new Schema(
       type: [{type: Schema.Types.ObjectId, ref:"Rate"}],
     },
 
+    favorite: {
+      type: Schema.Types.ObjectId, ref:"Favorite",
+    },
+    
     admin: {
       type: Boolean
+
     }
   },
   {
