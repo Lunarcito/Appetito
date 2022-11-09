@@ -49,7 +49,7 @@ router.get("/restaurants/:restaurantId", isLoggedIn, async (req, res) => {
     try {
         const restaurant = await Restaurant.findById(restaurantId)
       
-    //   const counting = await Rate.find({restaurantId})
+      const counting = await Rate.find({restaurantId})
     //     let likes = 0
     //     let dislikes = 0
 
@@ -74,7 +74,7 @@ router.get("/restaurants/:restaurantId", isLoggedIn, async (req, res) => {
         }
        
     },
-    
+
     ),
 
 
@@ -99,8 +99,6 @@ router.get("/restaurants/:restaurantId", isLoggedIn, async (req, res) => {
 
 
 
-
-
   router.post('/restaurants/:restaurantId', isLoggedIn, async (req, res) => {
     try {
         const user = req.session.currentUser
@@ -118,6 +116,13 @@ router.get("/restaurants/:restaurantId", isLoggedIn, async (req, res) => {
             rate = 1
         } else if (req.body.rate === "dislike") {
             rate = -1
+        }
+    } catch (erorr) {
+        console.log(error)
+    }
+})
+
+
 
 router.post('/restaurants/:restaurantId/like', async (req, res) => {
     try {
