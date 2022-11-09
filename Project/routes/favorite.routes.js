@@ -21,10 +21,11 @@ try {
 }
 }),
 
-
-router.get("/favorites" , async (req, res) => {
+router.get("/favorites" , isLoggedIn, async (req, res) => {
+  const userId = req.session.currentUser
     try {
-        const dbFavorites = await Favorite.find()
+        const dbFavorites = await Favorite.find({user: userId}).populate("restaurant")
+        console.log(dbFavorites)
         res.render("restaurants/restaurantFavorites" , { dbFavorites })
     } catch (error) {
         console.log(error)

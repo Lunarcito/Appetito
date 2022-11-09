@@ -1,6 +1,6 @@
 <h1>My Favorites</h1>
 
 {{#each dbFavorites}}
-    <img src="{{this.picture}}"/>
+    <img src="{{this.restaurant.picture}}"/>
     <a href="/restaurantFavorites/{{this._id}}"> Check this restaurant</a>
 {{/each}}
