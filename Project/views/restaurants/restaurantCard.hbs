@@ -3,10 +3,14 @@
     <img src="{{picture}}" />
 
     <p>{{likes}}</p>
+    <p>{{dislikes}}</p>
     
     <p>{{restaurant.style}}</p>
     <p>{{restaurant.address}}</p> 
+    {{#if restaurant.phonenumber}}
     <p>{{restaurant.phonenumber}}</p>
+    {{/if}}
+
     <p>{{restaurant.price}}</p>
     <p>{{restaurant.wifi}}</p>
     <p>{{restaurant.coworking}}</p>
@@ -15,13 +19,13 @@
 
 
 
-    <form action="/restaurants/{{ this.id }}" method="POST">
+    <form action="/restaurants/{{ restaurant.id }}" method="POST">
     <label> Review
             <input type="text" name="review" placeholder="Your review" />
         <button type="submit" name="rate" value="like">like</button>
     </form>
 
-    <form action="/restaurants/{{ this.id }}" method="POST"></form>
+    <form action="/restaurants/{{ restaurant.id }}" method="POST"></form>
         <button type="submit" name="rate" value="dislike">dislike</button>
     </form>
 

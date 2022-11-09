@@ -57,7 +57,7 @@ router.get("/restaurants/:restaurantId", async (req, res) => {
       
       const counting = await Rate.find({restaurantId})
         let likes = 0
-        let dislikes =0
+        let dislikes = 0
 
     counting.forEach(ele=>{
         if(ele.rate === 1){
@@ -65,6 +65,7 @@ router.get("/restaurants/:restaurantId", async (req, res) => {
         } else if (ele.rate ===-1){
             dislikes++
         }
+        console.log("number of dislikes", dislikes)
     }
     )
 console.log (likes)
@@ -96,12 +97,12 @@ console.log (likes)
         
    
 
-        let newRate = await Rate.create({rate, review, userId, restaurantId})
+        let newRate = await Rate.create({rate, review, user, restaurant})
         await User.findByIdAndUpdate(userId,{ $push: { rateIds: userId } })
         
         await Restaurant.findByIdAndUpdate(restaurantId,{ $push: { rateIds: restaurantId } })
         
-        res.redirect('/restaurants') 
+        res.redirect(`/restaurants/${restaurantId}`) 
 
     } catch (error) {
         console.log(error)
