@@ -34,7 +34,8 @@ const Restaurants = [
     instagram: "https://www.instagram.com/two.schmucks/?hl=es",
     wifi: true,
     coworking: false,
-    delivery: false
+    delivery: false,
+    petFriendly: true 
   },
 
   {
@@ -47,7 +48,8 @@ const Restaurants = [
     instagram: "https://www.instagram.com/paradiso_barcelona/?hl=es", 
     wifi: true,
     coworking: false,
-    delivery: false, 
+    delivery: false,
+    petFriendly: true 
 
   },
 
@@ -61,7 +63,8 @@ const Restaurants = [
     instagram: "https://www.instagram.com/bobbysfree/?hl=es", 
     wifi: true,
     coworking: false,
-    delivery: false, 
+    delivery: false,
+    petFriendly: true 
 
   },
 
@@ -75,7 +78,8 @@ const Restaurants = [
     instagram: "https://www.instagram.com/laselvabarcelona/", 
     wifi: true,
     coworking: false,
-    delivery: false, 
+    delivery: true,
+    petFriendly: false 
 
   },
 
@@ -89,7 +93,8 @@ const Restaurants = [
     instagram: "https://www.instagram.com/casalolea/", 
     wifi: true,
     coworking: false,
-    delivery: false, 
+    delivery: false,
+    petFriendly: false 
 
   },
 
@@ -104,7 +109,7 @@ const Restaurants = [
     wifi: true,
     coworking: false,
     delivery: false, 
-
+    petFriendly: true,
   },
 ]
 
