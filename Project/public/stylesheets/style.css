@@ -1,25 +1,90 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00b7ff;
+  font-family: 'Poppins';
+  font-style: normal;
+  margin: 0px 0px 0px 0px;
 }
 
 h1 {
-  color: 15px;
+/* Group 2 */
+width: 396px;
+height: 63px;
+margin-top: 90px;
+
+position: absolute;
+width: 396px;
+height: 63px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 48px;
+line-height: 58px;
+
+color: #F44141;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.rest-names {
-  position: relative;
-  top: 140%;
-  left: 75%;
-  transform: translate(-50%, -50%);
-  color: red
+#portada{
+background-image:url(../images/sushibackground.png);
+background-size: cover;
+width: 379px;
+height: 849px;
+margin: 0px 0px 0px 0px;
 }
 
-.rest-list img {
-  width: 75vw;
-  opacity: 50%;
+#start-button{
+  background: #FFB039;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  margin-top: 600px;
+  margin-left: 100px;
+  padding: 5px 55px 5px 55px;
+  border-color: #FFB039;
+  
 }
+
+#button-link{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 30px;
+  /* identical to box height */
+
+  color: #A33838!important;
+  text-decoration: none !important;
+}
+
+#sign-up{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 30px;
+  /* identical to box height */
+
+  color: #E33838 !important;
+  text-decoration: none !important;
+}
+
+
+p{
+
+/* Don’t you have an account yet? Sign up */
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 17px;
+/* identical to box height */
+text-align: center;
+
+color: #FFFFFF;
+
+
+}
+
+
+
