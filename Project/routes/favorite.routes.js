@@ -12,10 +12,15 @@ router.post("/favorite/:restaurantId", async (req, res) => {
     console.log(restaurantId)
     const user = req.session.currentUser
     console.log("This is the", user._id)
-try { 
-      let newFavorite = await Favorite.create({user: user._id, restaurant:restaurantId})
-      console.log(newFavorite)
-      res.redirect("/restaurants/restaurantFavorites")
+try {
+
+    let rateDB = await Favorite.find({restaurant: restaurantId, user: user._id})
+    if (rateDB.length === 0) {
+        let newFavorite = await Favorite.create({user: user._id, restaurant:restaurantId})
+        console.log(newFavorite)
+        res.redirect("/favorites")
+    }
+
 } catch (error) {
     console.log(error)
 }

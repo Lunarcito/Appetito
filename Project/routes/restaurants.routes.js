@@ -48,8 +48,15 @@ router.get("/restaurants/:restaurantId", isLoggedIn, async (req, res) => {
     const restaurantId = req.params.restaurantId
     try {
         const restaurant = await Restaurant.findById(restaurantId)
-      
-      const counting = await Rate.find({restaurantId})
+        console.log("Consultando:")
+        console.log(restaurantId)
+        console.log(restaurant)
+
+        // const counting = await Rate.find({restaurantId})
+        const counting = await Rate.find({restaurant: restaurantId})
+        console.log("Rates obtenidos: ")
+        console.log(counting.length)
+        console.log(counting)
     //     let likes = 0
     //     let dislikes = 0
 
@@ -61,12 +68,12 @@ router.get("/restaurants/:restaurantId", isLoggedIn, async (req, res) => {
     //     }
     // })
 
-        const ratesDB = await Rate.find({restaurant: restaurantId})
+        //const ratesDB = await Rate.find({restaurant: restaurantId})
         let likes = 0
         let dislikes = 0
 
 
-    counting.forEach(ele=>{
+        counting.forEach(ele=>{
         if(ele.rate === 1){
             likes++
         } else if (ele.rate ===-1){
@@ -77,9 +84,9 @@ router.get("/restaurants/:restaurantId", isLoggedIn, async (req, res) => {
 
     ),
 
-
-      res.render("restaurants/restaurantCard", {restaurant, likes, dislikes} )
+      // res.render("restaurants/restaurantCard", {restaurant, likes, dislikes} )
       
+        /* Esto ocasiona doble conteo
         ratesDB.forEach((rateDB) => {
             if (rateDB.rate < 0) {
                 dislikes++
@@ -87,12 +94,12 @@ router.get("/restaurants/:restaurantId", isLoggedIn, async (req, res) => {
                 likes++
             }
         })
+        */
 
-    
         res.render("restaurants/restaurantCard", {restaurant, likes, dislikes} )
 
-    } catch (err) {
-        console.log(err)
+    } catch (error) {
+        console.log(error)
     }
   })
 
@@ -101,6 +108,8 @@ router.get("/restaurants/:restaurantId", isLoggedIn, async (req, res) => {
 
   router.post('/restaurants/:restaurantId', isLoggedIn, async (req, res) => {
     try {
+        
+        /*
         const user = req.session.currentUser
        
         const userId = user._id
@@ -117,7 +126,10 @@ router.get("/restaurants/:restaurantId", isLoggedIn, async (req, res) => {
         } else if (req.body.rate === "dislike") {
             rate = -1
         }
-    } catch (erorr) {
+        
+        */
+
+    } catch (error) {
         console.log(error)
     }
 })
@@ -128,19 +140,21 @@ router.post('/restaurants/:restaurantId/like', async (req, res) => {
     try {
         const user = req.session.currentUser
         const userId = user._id
+        console.log("Usuario de sesion:")
+        console.log(userId)
         const restaurantId = req.params.restaurantId
         const rate = 1
 
         let rateDB = await Rate.find({restaurant: restaurantId, user: userId})
-        if (rateDB) {
+        if (rateDB.length === 0) {
 
+            let newRate = await Rate.create({rate, restaurant: restaurantId, user: userId})
+            await User.findByIdAndUpdate(userId,{ $push: { rateIds: newRate._id} })
+            await Restaurant.findByIdAndUpdate(restaurantId, { $push: { rateIds: newRate._id} })
+            
+            res.redirect(`/restaurants/${restaurantId}`) 
         }
-
-        let newRate = await Rate.create({rate, restaurant: restaurantId, user: userId})
-        await User.findByIdAndUpdate(userId,{ $push: { rateIds: newRate._id} })
-        await Restaurant.findByIdAndUpdate(restaurantId, { $push: { rateIds: newRate._id} })
         
-        res.redirect(`/restaurants/${restaurantId}`) 
 
     } catch (error) {
         console.log(error)
@@ -156,16 +170,19 @@ router.post('/restaurants/:restaurantId/dislike', async (req, res) => {
 
         let rateDB = await Rate.find({restaurant: restaurantId, user: userId})
         console.log('this is the found dbb',rateDB)
-        if (rateDB) {
-            console.log('hola')
-            await Rate.findOneAndDelete({restaurant: restaurantId, user: userId})
-        }
-
-        let newRate = await Rate.create({rate, restaurant: restaurantId, user: userId})
-        await User.findByIdAndUpdate(userId,{ $push: { rateIds: newRate._id} })
-        await Restaurant.findByIdAndUpdate(restaurantId, { $push: { rateIds: newRate._id} })
         
-        res.redirect(`/restaurants/${restaurantId}`) 
+        //if (rateDB) {
+        //    console.log('hola')
+        //    await Rate.findOneAndDelete({restaurant: restaurantId, user: userId})
+        //}
+
+        if (rateDB.length === 0) {
+            let newRate = await Rate.create({rate, restaurant: restaurantId, user: userId})
+            await User.findByIdAndUpdate(userId,{ $push: { rateIds: newRate._id} })
+            await Restaurant.findByIdAndUpdate(restaurantId, { $push: { rateIds: newRate._id} })
+            
+            res.redirect(`/restaurants/${restaurantId}`) 
+        }
 
     } catch (error) {
         console.log(error)
