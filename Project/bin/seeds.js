@@ -36,8 +36,6 @@ const Restaurants = [
     coworking: false,
     delivery: false,
     petFriendly: true,
-    favorite: true 
-
   },
 
   {
@@ -52,7 +50,6 @@ const Restaurants = [
     coworking: false,
     delivery: false,
     petFriendly: true, 
-    favorite: true 
   },
 
   {
@@ -66,8 +63,7 @@ const Restaurants = [
     wifi: true,
     coworking: false,
     delivery: false,
-    petFriendly: true, 
-    favorite: false
+    petFriendly: true,
   },
 
   {
@@ -82,8 +78,6 @@ const Restaurants = [
     coworking: false,
     delivery: true,
     petFriendly: false,
-    favorite: true 
-
   },
 
   {
@@ -98,7 +92,6 @@ const Restaurants = [
     coworking: false,
     delivery: false,
     petFriendly: false, 
-    favorite: true
   },
 
   {
@@ -113,7 +106,6 @@ const Restaurants = [
     coworking: false,
     delivery: false, 
     petFriendly: true,
-    favorite: true
   },
 
   {
@@ -128,7 +120,6 @@ const Restaurants = [
     coworking: false,
     delivery: false, 
     petFriendly: false,
-    favorite: false,
   },
 
   {
@@ -143,7 +134,6 @@ const Restaurants = [
     coworking: false,
     delivery: true, 
     petFriendly: false,
-    favorite: false,
   },
 
   {
@@ -158,7 +148,6 @@ const Restaurants = [
     coworking: false,
     delivery: true, 
     petFriendly: true,
-    favorite: true,
   },
 
   {
@@ -173,7 +162,6 @@ const Restaurants = [
     coworking: true,
     delivery: false, 
     petFriendly: true,
-    favorite: false,
   },
 
   {
@@ -188,7 +176,6 @@ const Restaurants = [
     coworking: true,
     delivery: false, 
     petFriendly: true,
-    favorite: false,
   },
 
   {
@@ -203,7 +190,6 @@ const Restaurants = [
     coworking: false,
     delivery: false, 
     petFriendly: false,
-    favorite: false,
   },
 
   {
@@ -218,7 +204,6 @@ const Restaurants = [
     coworking: true,
     delivery: false, 
     petFriendly: true,
-    favorite: false,
   },
 
   {
@@ -233,7 +218,6 @@ const Restaurants = [
     coworking: true,
     delivery: false, 
     petFriendly: true,
-    favorite: false,
   },
 
   {
@@ -248,7 +232,6 @@ const Restaurants = [
     coworking: true,
     delivery: false, 
     petFriendly: true,
-    favorite: false,
   },
 
 
