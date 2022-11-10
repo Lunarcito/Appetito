@@ -7,24 +7,6 @@ const Restaurant = require("../models/restaurant");
 const Rate = require("../models/rate");
 const Favorite = require("../models/favorite");
 
-router.post("/favorite/:restaurantId", async (req, res) => {
-    const restaurantId = req.params.restaurantId
-    console.log(restaurantId)
-    const user = req.session.currentUser
-    console.log("This is the", user._id)
-try {
-
-    let rateDB = await Favorite.find({restaurant: restaurantId, user: user._id})
-    if (rateDB.length === 0) {
-        let newFavorite = await Favorite.create({user: user._id, restaurant:restaurantId})
-        console.log(newFavorite)
-        res.redirect("/favorites")
-    }
-
-} catch (error) {
-    console.log(error)
-}
-}),
 
 router.get("/favorites" , isLoggedIn, async (req, res) => {
   const userId = req.session.currentUser
@@ -37,6 +19,16 @@ router.get("/favorites" , isLoggedIn, async (req, res) => {
     }
 })
 
+
+router.post('/favorites/:favoriteId/delete', async (req, res) => {
+    const favoriteId = req.params.favoriteId
+    try {
+       const dbFavorite = await Favorite.findOneAndDelete({favoriteId})
+       res.redirect('/favorites') 
+    } catch (error) {
+        console.log(error)
+    }
+})
 
 
 module.exports = router

@@ -2,5 +2,8 @@
 
 {{#each dbFavorites}}
     <img src="{{this.restaurant.picture}}"/>
-    <a href="/restaurantFavorites/{{this._id}}"> Check this restaurant</a>
+    <a href="/restaurants/{{this.restaurant._id}}"> Check this restaurant</a>
+    <form action="/favorites/{{this._id}}/delete" method="POST">
+        <button>delete</button>
+    </form>
 {{/each}}

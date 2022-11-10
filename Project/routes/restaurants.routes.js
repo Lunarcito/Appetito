@@ -48,15 +48,9 @@ router.get("/restaurants/:restaurantId", isLoggedIn, async (req, res) => {
     const restaurantId = req.params.restaurantId
     try {
         const restaurant = await Restaurant.findById(restaurantId)
-        console.log("Consultando:")
-        console.log(restaurantId)
-        console.log(restaurant)
 
         // const counting = await Rate.find({restaurantId})
         const counting = await Rate.find({restaurant: restaurantId})
-        console.log("Rates obtenidos: ")
-        console.log(counting.length)
-        console.log(counting)
     //     let likes = 0
     //     let dislikes = 0
 
@@ -153,6 +147,8 @@ router.post('/restaurants/:restaurantId/like', async (req, res) => {
             await Restaurant.findByIdAndUpdate(restaurantId, { $push: { rateIds: newRate._id} })
             
             res.redirect(`/restaurants/${restaurantId}`) 
+        } else {
+            res.redirect(`/restaurants/${restaurantId}`)
         }
         
 
@@ -169,12 +165,6 @@ router.post('/restaurants/:restaurantId/dislike', async (req, res) => {
         const rate = -1
 
         let rateDB = await Rate.find({restaurant: restaurantId, user: userId})
-        console.log('this is the found dbb',rateDB)
-        
-        //if (rateDB) {
-        //    console.log('hola')
-        //    await Rate.findOneAndDelete({restaurant: restaurantId, user: userId})
-        //}
 
         if (rateDB.length === 0) {
             let newRate = await Rate.create({rate, restaurant: restaurantId, user: userId})
@@ -182,12 +172,36 @@ router.post('/restaurants/:restaurantId/dislike', async (req, res) => {
             await Restaurant.findByIdAndUpdate(restaurantId, { $push: { rateIds: newRate._id} })
             
             res.redirect(`/restaurants/${restaurantId}`) 
+        } else {
+            res.redirect(`/restaurants/${restaurantId}`)
         }
 
     } catch (error) {
         console.log(error)
     }
 }),
+
+
+router.post("/favorite/:restaurantId", async (req, res) => {
+    const restaurantId = req.params.restaurantId
+    console.log(restaurantId)
+    const user = req.session.currentUser
+    console.log("This is the", user._id)
+try {
+
+    let rateDB = await Favorite.find({restaurant: restaurantId, user: user._id})
+    if (rateDB.length === 0) {
+        let newFavorite = await Favorite.create({user: user._id, restaurant:restaurantId})
+        res.redirect(`/restaurants/${restaurantId}`)
+    } else {
+        res.redirect(`/restaurants/${restaurantId}`)
+    }
+
+} catch (error) {
+    console.log(error)
+}   
+}),
+
 
 
 module.exports = router
