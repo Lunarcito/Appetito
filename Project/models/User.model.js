@@ -28,7 +28,10 @@ const userSchema = new Schema(
     favorite: {
       type: Schema.Types.ObjectId, ref:"Favorite",
     },
-    
+    reviews: {
+      type : [{type: Schema.Types.ObjectId, ref:'Review'}] 
+    },
+
     admin: {
       type: Boolean
 
