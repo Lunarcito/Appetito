@@ -1,9 +1,9 @@
-<h1>Restaurant List</h1>
+<h1 class="heading">Restaurant List</h1>
 <div class="rest-list">
     {{#each dbRestaurants}}
-    <a href="/restaurants/{{this._id}}"> 
+    <a href="/restaurants/{{this._id}}" class="anchor"> 
         <h1 class="rest-names">{{this.name}}</h1>
-        <img src="{{this.picture}}"/>
+     <img src="{{this.picture}}"/> 
     </a>
 {{/each}}
 </div>
