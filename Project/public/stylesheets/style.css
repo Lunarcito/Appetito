@@ -14,14 +14,14 @@ a {
 .heading{
   font-size: 1.5rem;
   text-align: center;
-  margin-top: 50px;
+  color: red
 }
 .anchor{
   width: 100%;
   display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .rest-names {
   position: relative;
@@ -38,22 +38,52 @@ align-items: center;
 width: 100vw;
 display: flex;
 flex-direction: column;
-gap: 30px;
-margin-bottom: 20px;
-
 }
+
 .rest-list img {
-width: 75vw;
+width: 85vw;
 height: 20vh;
 z-index: 1;
 opacity: 0.8;
+border-radius: 15px;
 }
 
 
+.filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.filters button {
+  border-radius: 10px;
+  border-color: #fa6763;
+  background-color: #fa6763;
+  color: white;
+  border-style: dashed;
+}
+
+.filters img {
+  width: 6.5vw;
+}
 
 
-/* .rest-list img {
-  width: 75vw;
-  opacity: 50%;
-  
-} */
+#logo {
+  position: relative;
+  top: -150px;
+}
+
+.nav {
+  height: 270px;
+}
+
+.filt-options select {
+  border-radius: 10px;
+  border-color: #fa6763;
+  color: #fa6763;
+}
+
+.filt-options {
+  text-transform: uppercase;
+  font-weight: bold;
+}
