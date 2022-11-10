@@ -32,3 +32,8 @@
         <button type="submit" name="rate" value="like">dislike</button>
     </form>
 
+    <form action="/restaurants/{{ restaurant._id}}/review" method="POST"> Write a review
+        <input type="text" name="review">
+        <button type="submit">Post</button>
+    </form>
+
