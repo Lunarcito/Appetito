@@ -1,4 +1,40 @@
 <h1 class="heading">Restaurant List</h1>
+
+<div class="price-filter">
+    <form action="/restaurants/price/€">
+        <button>€</button>
+    </form>
+
+    <form action="/restaurants/price/€€">
+        <button>€€</button>
+    </form>
+
+    <form action="/restaurants/price/€€€">
+        <button>€€€</button>
+    </form>
+</div>
+
+<div class="style-filter">
+    <form action="/restaurants/style">
+        <label> Style
+            <select name="style">
+            {{#each options}}
+                <option value="{{this}}">{{this}}</option>
+            {{/each}}
+        
+            </select>
+        </label>
+        <button>Filter</button>
+    </form>
+</div>
+
+<div class="favorites-filter">
+    <form action="/favorites">
+        <button>Favorites</button>
+    </form>
+</div>
+
+
 <div class="rest-list">
     {{#each dbRestaurants}}
     <a href="/restaurants/{{this._id}}" class="anchor"> 

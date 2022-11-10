@@ -15,7 +15,9 @@ const Review = require('../models/review')
 router.get('/restaurants' , isLoggedIn, async (req, res) => {
     try {
         const dbRestaurants = await Restaurant.find()
-        res.render('restaurants/restaurant-list', { dbRestaurants })
+        res.render('restaurants/restaurant-list', { dbRestaurants , options: ["Arabic", "Argentinian", "Bar", "Brazilian", "Burgers", "Chinese", "Korean", 
+        "Brunch", "Indian", "Japanese", "Indian",  "Kebab", "Mexican", "Italian", "Poke", 
+        "Sushi", "Vegan", "Vegetarian", "Vietnamese", "Coffee Shop", 'Steakhouse']})
     } catch (error) {
         console.log(error)
     }   
@@ -26,6 +28,23 @@ router.get('/create-restaurant' , isLoggedIn, isAdmin, (req, res) => {
     "Brunch", "Indian", "Japanese", "Indian",  "Kebab", "Mexican", "Italian", "Poke", 
     "Sushi", "Vegan", "Vegetarian", "Vietnamese", "Coffee Shop", 'Steakhouse']})
   })
+
+
+
+router.get('/restaurants/style', async (req, res) => {
+    const styleId = req.query.style
+    console.log(styleId)
+    try {
+        let dbRestaurants = await Restaurant.find({style: styleId})
+        res.render('restaurants/restaurant-list', { dbRestaurants, options: ["Arabic", "Argentinian", "Bar", "Brazilian", "Burgers", "Chinese", "Korean", 
+        "Brunch", "Indian", "Japanese", "Indian",  "Kebab", "Mexican", "Italian", "Poke", 
+        "Sushi", "Vegan", "Vegetarian", "Vietnamese", "Coffee Shop", 'Steakhouse'] })
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+
 
 
 router.post('/create-restaurant', async (req, res) => {
@@ -172,6 +191,20 @@ router.post('/restaurants/:restaurantId/review', async (req, res) => {
         console.log(error)
     }
 })
+
+router.get('/restaurants/price/:price', async (req, res) => {
+    const priceId = req.params.price
+    console.log(priceId)
+    try {
+        let dbRestaurants = await Restaurant.find({price: priceId})
+        res.render('restaurants/restaurant-list', { dbRestaurants, options: ["Arabic", "Argentinian", "Bar", "Brazilian", "Burgers", "Chinese", "Korean", 
+        "Brunch", "Indian", "Japanese", "Indian",  "Kebab", "Mexican", "Italian", "Poke", 
+        "Sushi", "Vegan", "Vegetarian", "Vietnamese", "Coffee Shop", 'Steakhouse'] })
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 
 
 module.exports = router
