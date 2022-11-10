@@ -1,6 +1,6 @@
-<h1 class="heading">Restaurant List</h1>
+{{!-- <h1 class="heading">Restaurant List</h1> --}}
 
-<div class="price-filter">
+<div class="filters">
     <form action="/restaurants/price/€">
         <button>€</button>
     </form>
@@ -12,11 +12,9 @@
     <form action="/restaurants/price/€€€">
         <button>€€€</button>
     </form>
-</div>
 
-<div class="style-filter">
     <form action="/restaurants/style">
-        <label> Style
+        <label class="filt-options"> Style
             <select name="style">
             {{#each options}}
                 <option value="{{this}}">{{this}}</option>
@@ -26,12 +24,8 @@
         </label>
         <button>Filter</button>
     </form>
-</div>
 
-<div class="favorites-filter">
-    <form action="/favorites">
-        <button>Favorites</button>
-    </form>
+    <a href="/favorites"><img src="/images/noto_drooling-face.png"></a>
 </div>
 
 
