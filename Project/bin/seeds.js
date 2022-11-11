@@ -36,7 +36,6 @@ const Restaurants = [
     coworking: false,
     delivery: false,
     petFriendly: true,
-
   },
 
   {
@@ -65,6 +64,7 @@ const Restaurants = [
     coworking: false,
     delivery: false,
     petFriendly: true, 
+
   },
 
   {
@@ -79,7 +79,6 @@ const Restaurants = [
     coworking: false,
     delivery: true,
     petFriendly: false,
-
   },
 
   {

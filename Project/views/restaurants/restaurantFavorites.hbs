@@ -1,9 +1,14 @@
-<h1>My Favorites</h1>
 
-{{#each dbFavorites}}
-    <img src="{{this.restaurant.picture}}"/>
-    <a href="/restaurants/{{this.restaurant._id}}"> Check this restaurant</a>
-    <form action="/favorites/{{this._id}}/delete" method="POST">
-        <button>delete</button>
-    </form>
-{{/each}}
+
+<div class="favorite-list">
+    <h1>Favorites</h1>
+    {{#each dbFavorites}}
+        <a href="/restaurants/{{this._id}}" class="anchor"> 
+        <h1 class="rest-names">{{this.restaurant.name}}</h1>
+     <img src="{{this.restaurant.picture}}"/> 
+    </a>
+        <form action="/favorites/{{this._id}}/delete" method="POST">
+            <button>Delete</button>
+        </form>
+    {{/each}}
+</div>
