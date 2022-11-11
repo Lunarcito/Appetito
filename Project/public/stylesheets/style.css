@@ -9,12 +9,13 @@ body {
   font-style: normal;
   margin: 0px 0px 0px 0px;
 }
-/* 
-h1 { */
+
+
+.apettito {
 /* Group 2 */
 /* width: 396px;
 height: 63px;
-margin-top: 90px;
+margin-top: 120px;
 
 position: absolute;
 width: 396px;
@@ -24,7 +25,6 @@ font-family: 'Inter';
 font-style: normal;
 font-weight: 600;
 font-size: 48px;
-line-height: 58px;
 
 color: #F44141;
 
@@ -39,18 +39,18 @@ height: 849px;
 margin: 0px 0px 0px 0px;
 }
 
-#start-button{
+.start-button1{
   background: #FFB039;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  margin-top: 600px;
+  margin-top: 700px;
   margin-left: 100px;
-  padding: 5px 55px 5px 55px;
+  padding: 4px 55px 4px 55px;
   border-color: #FFB039;
   
 }
 
-#button-link{
+.button-link1{
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 800;
@@ -60,6 +60,44 @@ margin: 0px 0px 0px 0px;
 
   color: #A33838!important;
   text-decoration: none !important;
+}
+
+
+.start-button2{
+  background: #FFB039;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  margin-top: 300px;
+  padding: 4px 55px 4px 55px;
+  border-color: #FFB039;
+  
+}
+
+.button-link2{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 30px;
+  /* identical to box height */
+
+  color: #A33838!important;
+  text-decoration: none !important;
+}
+
+#create-account p{
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 17px;
+text-align: center;
+margin-top: 20px;
+
+color: #000000;
+
+
 }
 
 #sign-up{
@@ -74,7 +112,43 @@ margin: 0px 0px 0px 0px;
   text-decoration: none !important;
 }
 
+#email{
 
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  
+  margin-top: 20px;
+  color: #9C9C9C;
+}
+
+
+#password{
+
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  
+  margin-top: 20px;
+  color: #9C9C9C;
+}
+
+#login-form{
+  
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 33px;
+  text-align: center;
+  margin-top: 30px;
+  color: #E33838;
+
+}
 p{
 
 /* Don’t you have an account yet? Sign up */
