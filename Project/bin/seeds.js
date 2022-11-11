@@ -63,7 +63,8 @@ const Restaurants = [
     wifi: true,
     coworking: false,
     delivery: false,
-    petFriendly: true,
+    petFriendly: true, 
+
   },
 
   {

@@ -1,4 +1,17 @@
-<h1>Welcome to your profile</h1>
-<form id="logout-form" action="auth/logout" method="POST">
-    <button>Logout</button>
+    <div class = "userProfile">
+        <h1>Welcome</h1>
+        <div class="user-info">
+        <p class="username">{{user.username}}</p>
+        <p class="userEmail">{{user.email}}</p>
+        </div>
+    </div>
+
+<div class="btn-user">
+
+<form id="userForms" action="auth/logout" method="POST" class="logourForm">
+<button class="buttonLogout">Logout</button>
 </form>
+
+<a href="/restaurants">Restaurants</a>
+<a href="/favorites">Favorites</a>
+</div>

@@ -9,11 +9,14 @@ body {
   margin: 0px 0px 0px 0px;
 }
 
-/* h1 { */
+
+
+.apettito {
+
 /* Group 2 */
 /* width: 396px;
 height: 63px;
-margin-top: 90px;
+margin-top: 120px;
 
 position: absolute;
 width: 396px;
@@ -23,7 +26,6 @@ font-family: 'Inter';
 font-style: normal;
 font-weight: 600;
 font-size: 48px;
-line-height: 58px;
 
 color: #F44141;
 
@@ -38,18 +40,18 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin: 0px 0px 0px 0px;
 }
 
-#start-button{
+.start-button1{
   background: #FFB039;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  margin-top: 600px;
+  margin-top: 700px;
   margin-left: 100px;
-  padding: 5px 55px 5px 55px;
+  padding: 4px 55px 4px 55px;
   border-color: #FFB039;
   
 }
 
-#button-link{
+.button-link1{
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 800;
@@ -59,6 +61,45 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   color: #A33838!important;
   text-decoration: none !important;
+}
+
+
+.start-button2{
+  background: #FFB039;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  margin-top: 300px;
+  margin-left: 100px;
+  padding: 4px 55px 4px 55px;
+  border-color: #FFB039;
+  
+}
+
+.button-link2{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 30px;
+  /* identical to box height */
+
+  color: #A33838!important;
+  text-decoration: none !important;
+}
+
+#create-account p{
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 17px;
+text-align: center;
+margin-top: 20px;
+
+color: #000000;
+
+
 }
 
 #sign-up{
@@ -73,7 +114,59 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-decoration: none !important;
 }
 
+.email{
 
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  
+  margin-top: 20px;
+  margin-left: 70px;
+  color: #9C9C9C;
+}
+
+
+.password{
+
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  
+  margin-top: 20px;
+  margin-left: 70px;
+  color: #9C9C9C;
+}
+
+
+.username{
+
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  
+  margin-top: 20px;
+  margin-left: 70px;
+  color: #9C9C9C;
+}
+
+.welcome{
+  
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: center;
+  margin-top: 30px;
+  color: #E33838;
+
+}
 p{
 
 /* Don’t you have an account yet? Sign up */
@@ -86,6 +179,21 @@ line-height: 17px;
 text-align: center;
 
 color: #FFFFFF;
+
+
+}
+
+#admin{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 17px;
+/* identical to box height */
+text-align: center;
+margin-top: 70px;
+
+color: #090000;
 
 
 }
@@ -152,6 +260,15 @@ border-radius: 15px;
 }
 
 
+#log {
+  position: relative;
+  top: -150px;
+}
+
+
+
+
+
 #logo {
   position: relative;
   top: -150px;
@@ -171,6 +288,56 @@ border-radius: 15px;
   text-transform: uppercase;
   font-weight: bold;
 }
+
+
+
+
+/*/ user profile
+/*/
+
+.userProfile {
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+font-size: 10px;
+height: 30vh;
+gap: 30px;
+}
+
+.userProfile h1 {
+color: black;
+font-size: 1,5rem;
+
+}
+.username{
+  color: 	red;
+  font-size: 2rem;
+}
+.userEmail{
+color: black;
+font-size: 1rem;
+
+}
+.user-info{
+display: flex;
+flex-direction: column;
+gap: 20px;
+height: 40%;
+
+}
+
+#logout-form {
+align-items: space-between;
+justify-content: center;
+}
+
+.theNameSize {
+font-size: 30px;}
+
+
+/*/ user profile
+/*/
 
 
 .favorite-list {
@@ -201,7 +368,6 @@ border-radius: 15px;
   color: white;
   border-style: dashed;
 }
-
 
 .rest-card p {
   color: black;
@@ -298,6 +464,44 @@ form {
   font-family: 'Poppins';
 }
 
-/* form input {
+.btn-user {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px;
 
-} */
+}
+
+.btn-user a{
+color: black;
+border: 1px solid black;
+padding:10px 50px ;
+border: none;
+width: 60%;
+text-align: center;
+background: #FFB039;
+box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+font-size: 20px;
+
+
+}
+
+.logourForm{
+  width: 59%;
+}
+
+.buttonLogout{ 
+  color: black;
+  border: 1px solid black;
+  padding:10px 50px ;
+  font-size: 20px;
+  border: none;
+  width: 100%;
+text-align: center;
+background: #FFB039;
+box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+
+}
+
