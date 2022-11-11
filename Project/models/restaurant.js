@@ -13,7 +13,7 @@ const restaurantSchema = new Schema(
       type: String,
       required: true,
       enum: ["Arabic", "Argentinian", "Bar", "Brazilian", "Burgers", "Chinese", "Korean", 
-      "Brunch", "Indian", "Japanese", "Indian",  "Kebab", "Mexican", "Italian", "Poke", 
+      "Brunch", "Indian", "Japanese",  "Kebab", "Mexican", "Italian", "Poke", 
       "Sushi", "Vegan", "Vegetarian", "Vietnamese", "Coffee Shop", "Steakhouse"]
     },
 
