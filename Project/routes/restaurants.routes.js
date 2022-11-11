@@ -86,7 +86,7 @@ router.get("/restaurants/:restaurantId", isLoggedIn, async (req, res) => {
     },
 
     ),
-        res.render("restaurants/restaurantCard", {restaurant, likes, dislikes} )
+        res.render("restaurants/restaurantCard", {restaurant, likes, dislikes, layout: false} )
 
     } catch (error) {
         console.log(error)
