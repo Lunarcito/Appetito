@@ -108,6 +108,7 @@ a {
   justify-content: center;
   align-items: center;
 }
+
 .rest-names {
   position: relative;
   top: 100px;
@@ -171,5 +172,35 @@ border-radius: 15px;
 .filt-options {
   text-transform: uppercase;
   font-weight: bold;
+}
+
+
+.favorite-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fa6763;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+
+.favorite-list img {
+  width: 85vw;
+  height: 20vh;
+  z-index: 1;
+  opacity: 0.8;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.favorite-list button {
+  border-radius: 10px;
+  border-color: #fa6763;
+  background-color: #fa6763;
+  color: white;
+  border-style: dashed;
 }
 
