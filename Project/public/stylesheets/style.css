@@ -175,6 +175,29 @@ border-radius: 15px;
 }
 
 
+
+
+/*/ user profile
+/*/
+
+.userProfile {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+font-size: 10px;
+line-height: 40px;
+}
+
+#logout-form {
+align-items: space-between;
+justify-content: center;
+}
+
+.theNameSize {
+font-size: 30px;
+
+
 .favorite-list {
   width: 100%;
   display: flex;
