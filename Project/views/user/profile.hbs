@@ -1,22 +1,12 @@
-
-
-
     <div class = "userProfile">
-        <h1>Welcome to your profile</h1>
-        <div class = "theNameSize">
-        <p>{{user.username}}</p>
+        <h1>Welcome</h1>
+        <div class="user-info">
+        <p class="username">{{user.username}}</p>
+        <p class="userEmail">{{user.email}}</p>
         </div>
-        <p>{{user.email}}</p>
     </div>
-      
-
 <form id="userForms" action="auth/logout" method="POST">
-<button>Logout</button>
+<div class="button">
+<button >Logout</button>
+</div>
 </form>
-<form id="userForms" action="restaurant/restaurant-list" method="POST">
-<button>Restaurants List</button>
-</form>
-<form id="userForms" action="restaurant/Favorites" method="POST">
-<button>My Favorites</button>
-</form>
-

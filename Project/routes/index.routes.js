@@ -12,7 +12,7 @@ router.get("/", (req, res, next) => {
 // GET // User Profile
 router.get('/profile', isLoggedIn, (req, res) => {
   const user = req.session.currentUser
-
+  console.log(user) 
   res.render('user/profile', {user})
 })
 
