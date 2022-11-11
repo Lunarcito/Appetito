@@ -1,6 +1,7 @@
 *{
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Poppins';
 }
 
 body {
@@ -12,30 +13,27 @@ body {
 
 
 .apettito {
+  width: 380px;
+  height: 63px;
+  margin-top: 120px;
 
-/* Group 2 */
-/* width: 396px;
-height: 63px;
-margin-top: 120px;
+  position: absolute;
+  height: 63px;
 
-position: absolute;
-width: 396px;
-height: 63px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 600;
-font-size: 48px;
+  color: #F44141;
 
-color: #F44141;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+} 
 
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-} */
-
-#portada{
+#portada {
   background-image:url(../images/sushibackground.png);
   background-size: cover;
-  width: 379px;
+  width: 390px;
   height: 849px;
   margin: 0px 0px 0px 0px;
 }
@@ -88,18 +86,17 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 #create-account p{
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  margin-top: 20px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 600;
-font-size: 14px;
-line-height: 17px;
-text-align: center;
-margin-top: 20px;
-
-color: #000000;
-
-
+  color: white;
 }
 
 #sign-up{
@@ -129,7 +126,6 @@ color: #000000;
 
 
 .password{
-
   font-family: 'Nunito';
   font-style: normal;
   font-weight: 600;
@@ -143,7 +139,6 @@ color: #000000;
 
 
 .username{
-
   font-family: 'Nunito';
   font-style: normal;
   font-weight: 600;
@@ -180,21 +175,19 @@ text-align: center;
 
 color: #FFFFFF;
 
-
 }
 
 #admin{
-font-family: 'Inter';
-font-style: normal;
-font-weight: 600;
-font-size: 18px;
-line-height: 17px;
-/* identical to box height */
-text-align: center;
-margin-top: 70px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 17px;
+  /* identical to box height */
+  text-align: center;
+  margin-top: 70px;
 
-color: #090000;
-
+  color: #090000;
 
 }
 
@@ -227,17 +220,17 @@ a {
 
 
 .rest-list{
-width: 100vw;
-display: flex;
-flex-direction: column;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
 
 .rest-list img {
-width: 85vw;
-height: 20vh;
-z-index: 1;
-opacity: 0.8;
-border-radius: 15px;
+  width: 85vw;
+  height: 20vh;
+  z-index: 1;
+  opacity: 0.8;
+  border-radius: 15px;
 }
 
 
@@ -298,11 +291,11 @@ border-radius: 15px;
 .userProfile {
 display: flex;
 flex-direction: column;
-justify-content: flex-start;
+justify-content: center;
 align-items: center;
-font-size: 10px;
 height: 30vh;
-gap: 30px;
+gap: 20px;
+font-family: 'Poppins';
 }
 
 .userProfile h1 {
@@ -310,21 +303,21 @@ color: black;
 font-size: 1,5rem;
 
 }
-.username{
+.username1{
   color: 	red;
-  font-size: 2rem;
+  font-size: 2.4rem;
 }
+
 .userEmail{
-color: black;
-font-size: 1rem;
-
+  color: black;
+  font-size: 1rem;
 }
-.user-info{
-display: flex;
-flex-direction: column;
-gap: 20px;
-height: 40%;
 
+.user-info{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 40%;
 }
 
 #logout-form {
@@ -333,7 +326,8 @@ justify-content: center;
 }
 
 .theNameSize {
-font-size: 30px;}
+  font-size: 30px;
+}
 
 
 /*/ user profile
