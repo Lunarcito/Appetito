@@ -1,24 +1,25 @@
 <div id="login-form">
-  <h2>Log In</h2>
+  <h2>Welcome to AP:PETITO</h2>
   <form action="/auth/login" method="POST">
 
-<div id="data">
+<div id="email">
     <label> Email:
       <input type="email" name="email" placeholder="Your email" />
     </label>
-
+</div>
+<div id ="password">
     <label> Password:
       <input type="password" name="password" placeholder="Your password" />
     </label>
 
 </div>
-<div id="button">
-    <button type="submit">Log In</button>
-</div>
 
-</div>
-<div>
-    <p>Forgot Password</p>
+<div id="create-account">
+
+<button class="start-button2"><a class="button-link2"href="/auth/login"> LOG IN </a></button>
+
+<p>Forgot Password</p>
+
 </div>
 
     {{#if errorMessage}}
