@@ -191,7 +191,7 @@ gap: 30px;
 }
 
 .userProfile h1 {
-color: green;
+color: black;
 font-size: 1,5rem;
 
 }
@@ -200,7 +200,7 @@ font-size: 1,5rem;
   font-size: 2rem;
 }
 .userEmail{
-color: red;
+color: black;
 font-size: 1rem;
 
 }
@@ -254,3 +254,43 @@ font-size: 30px;}
   border-style: dashed;
 }
 
+.btn-user {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+
+}
+
+.btn-user a{
+color: black;
+border: 1px solid black;
+padding:10px 50px ;
+border: none;
+width: 60%;
+text-align: center;
+background: #FFB039;
+box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+font-size: 20px;
+
+
+}
+
+.logourForm{
+  width: 59%;
+}
+
+.buttonLogout{ 
+  color: black;
+  border: 1px solid black;
+  padding:10px 50px ;
+  font-size: 20px;
+  border: none;
+  width: 100%;
+text-align: center;
+background: #FFB039;
+box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+
+}
