@@ -67,6 +67,7 @@ margin: 0px 0px 0px 0px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   margin-top: 300px;
+  margin-left: 100px;
   padding: 4px 55px 4px 55px;
   border-color: #FFB039;
   
@@ -111,7 +112,7 @@ color: #000000;
   text-decoration: none !important;
 }
 
-#email{
+.email{
 
   font-family: 'Nunito';
   font-style: normal;
@@ -120,11 +121,12 @@ color: #000000;
   line-height: 22px;
   
   margin-top: 20px;
+  margin-left: 70px;
   color: #9C9C9C;
 }
 
 
-#password{
+.password{
 
   font-family: 'Nunito';
   font-style: normal;
@@ -133,15 +135,30 @@ color: #000000;
   line-height: 22px;
   
   margin-top: 20px;
+  margin-left: 70px;
   color: #9C9C9C;
 }
 
-#login-form{
+
+.username{
+
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  
+  margin-top: 20px;
+  margin-left: 70px;
+  color: #9C9C9C;
+}
+
+.welcome{
   
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 33px;
   text-align: center;
   margin-top: 30px;
@@ -161,6 +178,21 @@ line-height: 17px;
 text-align: center;
 
 color: #FFFFFF;
+
+
+}
+
+#admin{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 17px;
+/* identical to box height */
+text-align: center;
+margin-top: 70px;
+
+color: #090000;
 
 
 }
@@ -225,6 +257,15 @@ border-radius: 15px;
 .filters img {
   width: 6.5vw;
 }
+
+
+#log {
+  position: relative;
+  top: -150px;
+}
+
+
+
 
 
 #logo {
