@@ -49,7 +49,7 @@ router.get('/restaurants/style', async (req, res) => {
 
 router.post('/create-restaurant', async (req, res) => {
     const {name, style, address, price, phonenumber, picture, instagram, wifi, coworking, delivery } = req.body
-    console.log("Hello Cualquier cosa")
+
     try {
         const wifiT = Boolean(wifi)
         const cowork = Boolean(coworking)
@@ -98,8 +98,6 @@ router.post('/restaurants/:restaurantId/like', async (req, res) => {
     try {
         const user = req.session.currentUser
         const userId = user._id
-        console.log("Usuario de sesion:")
-        console.log(userId)
         const restaurantId = req.params.restaurantId
         const rate = 1
 
@@ -148,10 +146,9 @@ router.post('/restaurants/:restaurantId/dislike', async (req, res) => {
 
 router.post("/favorite/:restaurantId", async (req, res) => {
     const restaurantId = req.params.restaurantId
-    console.log(restaurantId)
     const user = req.session.currentUser
-    console.log("This is the", user._id)
-try {
+    
+    try {
 
     let rateDB = await Favorite.find({restaurant: restaurantId, user: user._id})
     if (rateDB.length === 0) {
@@ -194,7 +191,7 @@ router.post('/restaurants/:restaurantId/review', async (req, res) => {
 
 router.get('/restaurants/price/:price', async (req, res) => {
     const priceId = req.params.price
-    console.log(priceId)
+
     try {
         let dbRestaurants = await Restaurant.find({price: priceId})
         res.render('restaurants/restaurant-list', { dbRestaurants, options: ["Arabic", "Argentinian", "Bar", "Brazilian", "Burgers", "Chinese", "Korean", 

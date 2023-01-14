@@ -13,9 +13,7 @@ const User = require("../models/User.model");
 
 // Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
 const isLoggedOut = require("../middleware/isLoggedOut");
-const isLoggedIn = require("../middleware/isLoggedIn");
 const isAdmin = require('../middleware/isAdmin')
-const { response } = require("express");
 
 // GET /auth/signup
 router.get("/signup", isLoggedOut, (req, res) => {
@@ -24,6 +22,7 @@ router.get("/signup", isLoggedOut, (req, res) => {
 
 // POST /auth/signup
 router.post("/signup", isLoggedOut, (req, res) => {
+  
   let { username, email, password, admin } = req.body;
 
   let adminCk = false
@@ -31,7 +30,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
   if (admin == "on") {
     adminCk = true
   }
- 
+
   // Check that username, email, and password are provided
   if (username === "" || email === "" || password === "") {
     res.status(400).render("auth/signup", {
@@ -61,8 +60,9 @@ router.post("/signup", isLoggedOut, (req, res) => {
       return User.create({ username, email, password: hashedPassword, admin: adminCk});
     })
     .then((user) => {
-      req.session.currentUser = user.toObject();
-      res.redirect("/restaurants");
+      //req.session.currentUser = user.toObject();
+      //req.session.currentUser = null;
+      res.redirect("/auth/login");
     })
     .catch((error) => {
       if (error instanceof mongoose.Error.ValidationError) {
@@ -85,7 +85,18 @@ router.get("/login", isLoggedOut, (req, res) => {
 
 // POST /auth/login
 router.post("/login", isLoggedOut, (req, res, next) => {
+
+  console.log("login")
+
+
   const { email, password } = req.body;
+
+
+  console.log(req.body)
+
+
+  console.log(isLoggedOut)
+
 
   // Check that username, email, and password are provided
   if (email === "" || password === "") {

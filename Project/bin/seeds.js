@@ -13,7 +13,6 @@ const createSeeds = async function () {
     await Restaurant.create(Restaurants)
 
     // Clear DB,  Example: (-- const deleteAll = await Book.deleteMany() --)
-    // console.log("Db clean")
 
     const dbClose = await mongoose.connection.close()
     console.log("Seeds created")
